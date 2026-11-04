@@ -84,3 +84,16 @@ function createOutputCard() {
 
   return card;
 }
+
+/*********************** PAGE INIT ED EVENTI *****************/
+
+function initApp() {
+  const appLayout = document.createElement("div");
+  appLayout.className = "app-layout";
+
+  appLayout.appendChild(createInputCard());
+  appLayout.appendChild(createOutputCard());
+  container.appendChild(appLayout);
+
+  setupEventListeners();
+}
