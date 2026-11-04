@@ -97,3 +97,13 @@ function initApp() {
 
   setupEventListeners();
 }
+
+// Collegamento eventi agli elementi
+function setupEventListeners() {
+  const generateBtn = document.getElementById("generate-btn");
+  const copyBtn = document.getElementById("copy-btn");
+
+  generateBtn.addEventListener("click", handleGenerateEmail);
+  copyBtn.addEventListener("click", handleCopyText);
+}
+
