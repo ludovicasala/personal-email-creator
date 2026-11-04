@@ -108,7 +108,7 @@ function setupEventListeners() {
 }
 
 // Gestione click sul bottone
-function handleGenerateEmail() {
+async function handleGenerateEmail() {
   const rawTextInput = document.getElementById("raw-text");
   const outputText = document.getElementById("output-text");
   const toneSelect = document.getElementById("tone");
@@ -125,4 +125,35 @@ function handleGenerateEmail() {
   const tone = toneSelect.value;
   const length = lengthSelect.value;
   const emoji = emojiSelect.value;
+
+  // Feedback caricamento
+  generateBtn.textContent = "Generazione in corso...";
+  generateBtn.disabled = true;
+  outputText.value = "";
+
+  const prompt = `Sei un assistente per la scrittura di email. Riscrivi il seguente testo grezzo in un'email professionale.
+                  Parametri richiesti:
+                  - Tono: ${tone}
+                  - Lunghezza: ${length}
+                  - Emoji: ${emoji === "moderate" ? "Usa qualche emoji appropriata" : "Non usare emoji"}
+
+                  Testo grezzo da rielaborare:
+                  "${text}"
+
+                  Restituisci direttamente il corpo dell'email formattato correttamente.`;
+
+  const requestConfig = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+      "HTTP-Referer": window.location.origin,
+      "X-Title": "Assistente Email"
+    },
+    body: JSON.stringify({
+      model: "openai/gpt-4o-mini",
+      messages: [{ role: "user", content: prompt }]
+    })
+  };
+
 }
