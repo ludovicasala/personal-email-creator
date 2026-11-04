@@ -156,4 +156,21 @@ async function handleGenerateEmail() {
     })
   };
 
+  try {
+    const response = await fetch(apiUrl, requestConfig);
+    if (!response.ok) {
+      throw new Error("Errore durante la chiamata a OpenRouter");
+    }
+
+    const data = await response.json();
+    const risposta = data.choices[0].message.content;
+
+    outputText.value = risposta;
+  } catch (error) {
+    console.error(error);
+    outputText.value = "Errore durante la generazione dell'email. Riprova più tardi.";
+  } finally {
+    generateBtn.textContent = "Genera Email";
+    generateBtn.disabled = false;
+  }
 }
