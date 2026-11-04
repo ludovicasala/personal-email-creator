@@ -107,3 +107,22 @@ function setupEventListeners() {
   copyBtn.addEventListener("click", handleCopyText);
 }
 
+// Gestione click sul bottone
+function handleGenerateEmail() {
+  const rawTextInput = document.getElementById("raw-text");
+  const outputText = document.getElementById("output-text");
+  const toneSelect = document.getElementById("tone");
+  const lengthSelect = document.getElementById("length");
+  const emojiSelect = document.getElementById("emoji");
+  const generateBtn = document.getElementById("generate-btn");
+
+  const text = rawTextInput.value.trim();
+  if (text === "") {
+    alert("Inserisci del testo grezzo prima di generare l'email!");
+    return;
+  }
+
+  const tone = toneSelect.value;
+  const length = lengthSelect.value;
+  const emoji = emojiSelect.value;
+}
