@@ -15,60 +15,9 @@
             <h1>Assistente Email</h1>
             <p>Trasforma i tuoi appunti grezzi in email perfette e pronte da inviare.</p>
         </header>
-
-        <div class="app-layout">
-            <section class="card">
-                <div class="form-group">
-                    <label for="raw-text">Testo grezzo</label>
-                    <textarea id="raw-text" rows="6"
-                        placeholder="Es: ciao marco, riesci a mandarmi il report entro venerdì? grazie..."></textarea>
-                </div>
-
-                <div class="controls-grid">
-                    <div class="form-group">
-                        <label for="tone">Tono</label>
-                        <select id="tone">
-                            <option value="professional">Professionale</option>
-                            <option value="formal">Formale</option>
-                            <option value="friendly">Amichevole</option>
-                            <option value="direct">Diretto</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="length">Lunghezza</label>
-                        <select id="length">
-                            <option value="concise">Breve</option>
-                            <option value="medium" selected>Standard</option>
-                            <option value="detailed">Dettagliata</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="emoji">Emoji</label>
-                        <select id="emoji">
-                            <option value="none">Nessuna</option>
-                            <option value="moderate">Moderate</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button id="generate-btn" class="btn-primary">Genera Email</button>
-            </section>
-
-            <section class="card output-card">
-                <div class="form-group">
-                    <label for="output-text">Risultato</label>
-                    <textarea id="output-text" rows="10" readonly
-                        placeholder="La tua email generata apparirà qui..."></textarea>
-                </div>
-                <div class="actions">
-                    <button id="copy-btn" class="btn-secondary">Copia Testo</button>
-                </div>
-            </section>
-        </div>
     </main>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
