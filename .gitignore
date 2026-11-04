@@ -1,0 +1,6 @@
+# Esclude il file di configurazione con la chiave API privata
+apiConfig.js
+
+# File di sistema o temporanei
+.DS_Store
+node_modules/
